@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import IncrementButton from '../components/IncrementButton'
+---
+
+<Layout title="About">
+  <IncrementButton client:load />
+  <p class="text-2xl bg-blue-500 text-white" id="copyright">About</p>
+</Layout>
+
+<script>
+  const copyright = document.querySelector('#copyright')
+
+  if (copyright) copyright.textContent = new Date().getFullYear().toString()
+</script>
